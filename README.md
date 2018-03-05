@@ -91,5 +91,62 @@ HelloWorld.deployed().then(function(deployed){hw=deployed;});
 hw.SayHello.call()
 ```
 
+## Advanced Types
 
+Structs: Custom defined types.
 
+```
+struct Person
+{
+	uint age;
+	bool isCook;
+	address accountAddress;
+}
+
+struct Parents
+{
+	Person father;
+	Person mother;
+}
+```
+
+Enum: List of finite set of values.
+```
+enum Gender { Male, Female, Non-Specified}
+```
+
+Arrays: Structure for grouping of elements.
+```
+string[] names;
+Person[] persons;
+Person[10] topTenAuthers;
+topTenAuthers[3] = persons[5];
+```
+
+Mappings: Table of values.
+```
+mapping(address => uint) public balances;
+return balances[account.Address];
+```
+
+Selfdestruct & delete: Killing a contract or deleting the content.
+```
+selfdestruct(msg.sender);
+delete(objectArray);
+```
+
+Throwing Exceptions: Stop all operations and return unspent ether.
+```
+throw();
+```
+
+Commenting.
+```
+// Single line
+
+/*
+ Multi-line comment
+*/
+
+/// @notice Natspec comment
+```
