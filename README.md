@@ -91,6 +91,29 @@ HelloWorld.deployed().then(function(deployed){hw=deployed;});
 hw.SayHello.call()
 ```
 
+## Note for ScoreStore project
+```
+truffle console
+var ss
+ScoreStore.deployed().then(function(deployed){ss=deployed;});
+ss.AddPersonScore("zubo", 10);
+ss.GetScore.call("zubo")
+```
+
+
+Deploy to production. Add into truffle.js
+```
+    production: {
+      host: "xxxx.xxx.com", //ETHEREUM-RPC-ENDPOINT from azure without http part
+      // remove port
+      network_id: "*" // Match any network id
+    }
+```
+
+Compile first then deploy.
+
+> truffle migrate --network production
+
 ## Advanced Types
 
 Structs: Custom defined types.
