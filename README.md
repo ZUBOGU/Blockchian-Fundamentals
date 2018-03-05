@@ -110,9 +110,36 @@ Deploy to production. Add into truffle.js
     }
 ```
 
-Compile first then deploy.
+Initial azure block-chain. SSH into azure.
+```
+ssh -p 3000 // plus the ssh address from azure
+geth attach
+personal.unlockAccount(eth.coinbase)
+Enter Passphrase
+```
 
-> truffle migrate --network production
+Compile first then deploy.
+```
+truffle migrate --network production
+truffle console --network production
+// do the some check in local
+```
+
+## Calling External Functions
+Create MyGame contract to call ScoreStore contract. Find the address from StoreStore.deployed().
+```
+truffle console
+StoreStore.deployed()
+```
+
+Check the contract from console mode.
+```
+truffle console
+var ss
+ScoreStore.deployed().then(function(deployed){ss=deployed;});
+ss.AddPersonScore("zubo", 10);
+ss.GetScore.call("zubo")
+```
 
 ## Advanced Types
 

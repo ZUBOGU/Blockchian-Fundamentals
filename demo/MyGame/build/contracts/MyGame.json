@@ -1,0 +1,832 @@
+{
+  "contractName": "MyGame",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "ShowScore",
+      "outputs": [
+        {
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6101fc8061001e6000396000f300606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063f06c5f0f14610046575b600080fd5b341561005157600080fd5b6100a1600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506100b7565b6040518082815260200191505060405180910390f35b60008073e6b23e3ff5f6e55c5f6a4526bbbee6326f89bb4f90508073ffffffffffffffffffffffffffffffffffffffff1663308d1964846000604051602001526040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610162578082015181840152602081019050610147565b50505050905090810190601f16801561018f5780820380516001836020036101000a031916815260200191505b5092505050602060405180830381600087803b15156101ad57600080fd5b6102c65a03f115156101be57600080fd5b505050604051805190509150509190505600a165627a7a72305820ce191e67fc7b3cd4fe7d556f3d30adacac94df828d631a496f7d0ddc725041a70029",
+  "deployedBytecode": "0x606060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063f06c5f0f14610046575b600080fd5b341561005157600080fd5b6100a1600480803590602001908201803590602001908080601f016020809104026020016040519081016040528093929190818152602001838380828437820191505050505050919050506100b7565b6040518082815260200191505060405180910390f35b60008073e6b23e3ff5f6e55c5f6a4526bbbee6326f89bb4f90508073ffffffffffffffffffffffffffffffffffffffff1663308d1964846000604051602001526040518263ffffffff167c01000000000000000000000000000000000000000000000000000000000281526004018080602001828103825283818151815260200191508051906020019080838360005b83811015610162578082015181840152602081019050610147565b50505050905090810190601f16801561018f5780820380516001836020036101000a031916815260200191505b5092505050602060405180830381600087803b15156101ad57600080fd5b6102c65a03f115156101be57600080fd5b505050604051805190509150509190505600a165627a7a72305820ce191e67fc7b3cd4fe7d556f3d30adacac94df828d631a496f7d0ddc725041a70029",
+  "sourceMap": "100:270:1:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "100:270:1:-;;;;;;;;;;;;;;;;;;;;;;;;121:247;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;162:3;239:22;276:42;239:80;;336:10;:19;;;356:4;336:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:2;8:100;;;99:1;94:3;90;84:5;80:1;75:3;71;64:6;52:2;49:1;45:3;40:15;;8:100;;;12:14;3:109;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;329:32:1;;121:247;;;;:::o",
+  "source": "pragma solidity ^0.4.17;\ncontract IScoreStore{\n    function GetScore(string name) returns (int);\n}\n\ncontract MyGame{\n    function ShowScore(string name) returns (int)\n    {   \n        //find the address from StoreStore.deployed().\n        IScoreStore scoreStore = IScoreStore(0xe6b23e3ff5f6e55c5f6a4526bbbee6326f89bb4f);\n        return scoreStore.GetScore(name);\n    }\n}",
+  "sourcePath": "/Users/zubo/Blockchain Fundamentals/demo/MyGame/contracts/MyGame.sol",
+  "ast": {
+    "absolutePath": "/Users/zubo/Blockchain Fundamentals/demo/MyGame/contracts/MyGame.sol",
+    "exportedSymbols": {
+      "IScoreStore": [
+        66
+      ],
+      "MyGame": [
+        86
+      ]
+    },
+    "id": 87,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 66,
+        "linearizedBaseContracts": [
+          66
+        ],
+        "name": "IScoreStore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 65,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "GetScore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 61,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 60,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 65,
+                  "src": "69:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 59,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "69:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "68:13:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 63,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 65,
+                  "src": "91:3:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "91:3:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "90:5:1"
+            },
+            "scope": 66,
+            "src": "51:45:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 87,
+        "src": "25:73:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 86,
+        "linearizedBaseContracts": [
+          86
+        ],
+        "name": "MyGame",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 84,
+              "nodeType": "Block",
+              "src": "171:197:1",
+              "statements": [
+                {
+                  "assignments": [
+                    74
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 74,
+                      "name": "scoreStore",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 85,
+                      "src": "239:22:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IScoreStore_$66",
+                        "typeString": "contract IScoreStore"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 73,
+                        "name": "IScoreStore",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 66,
+                        "src": "239:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IScoreStore_$66",
+                          "typeString": "contract IScoreStore"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 78,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "307865366232336533666635663665353563356636613435323662626265653633323666383962623466",
+                        "id": 76,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "276:42:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1317042832661281242632055431251032761901718813519_by_1",
+                          "typeString": "int_const 1317042832661281242632055431251032761901718813519"
+                        },
+                        "value": "0xe6b23e3ff5f6e55c5f6a4526bbbee6326f89bb4f"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_1317042832661281242632055431251032761901718813519_by_1",
+                          "typeString": "int_const 1317042832661281242632055431251032761901718813519"
+                        }
+                      ],
+                      "id": 75,
+                      "name": "IScoreStore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 66,
+                      "src": "264:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IScoreStore_$66_$",
+                        "typeString": "type(contract IScoreStore)"
+                      }
+                    },
+                    "id": 77,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "264:55:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IScoreStore_$66",
+                      "typeString": "contract IScoreStore"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "239:80:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 81,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 68,
+                        "src": "356:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 79,
+                        "name": "scoreStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 74,
+                        "src": "336:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IScoreStore_$66",
+                          "typeString": "contract IScoreStore"
+                        }
+                      },
+                      "id": 80,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "GetScore",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 65,
+                      "src": "336:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_int256_$",
+                        "typeString": "function (string memory) external returns (int256)"
+                      }
+                    },
+                    "id": 82,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "336:25:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 72,
+                  "id": 83,
+                  "nodeType": "Return",
+                  "src": "329:32:1"
+                }
+              ]
+            },
+            "id": 85,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "ShowScore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 85,
+                  "src": "140:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:13:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 72,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 85,
+                  "src": "162:3:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 70,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:3:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "161:5:1"
+            },
+            "scope": 86,
+            "src": "121:247:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 87,
+        "src": "100:270:1"
+      }
+    ],
+    "src": "0:370:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/zubo/Blockchain Fundamentals/demo/MyGame/contracts/MyGame.sol",
+    "exportedSymbols": {
+      "IScoreStore": [
+        66
+      ],
+      "MyGame": [
+        86
+      ]
+    },
+    "id": 87,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 66,
+        "linearizedBaseContracts": [
+          66
+        ],
+        "name": "IScoreStore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "id": 65,
+            "implemented": false,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "GetScore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 61,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 60,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 65,
+                  "src": "69:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 59,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "69:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "68:13:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 64,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 63,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 65,
+                  "src": "91:3:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 62,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "91:3:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "90:5:1"
+            },
+            "scope": 66,
+            "src": "51:45:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 87,
+        "src": "25:73:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 86,
+        "linearizedBaseContracts": [
+          86
+        ],
+        "name": "MyGame",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 84,
+              "nodeType": "Block",
+              "src": "171:197:1",
+              "statements": [
+                {
+                  "assignments": [
+                    74
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 74,
+                      "name": "scoreStore",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 85,
+                      "src": "239:22:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_IScoreStore_$66",
+                        "typeString": "contract IScoreStore"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 73,
+                        "name": "IScoreStore",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 66,
+                        "src": "239:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IScoreStore_$66",
+                          "typeString": "contract IScoreStore"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 78,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "307865366232336533666635663665353563356636613435323662626265653633323666383962623466",
+                        "id": 76,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "276:42:1",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1317042832661281242632055431251032761901718813519_by_1",
+                          "typeString": "int_const 1317042832661281242632055431251032761901718813519"
+                        },
+                        "value": "0xe6b23e3ff5f6e55c5f6a4526bbbee6326f89bb4f"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_1317042832661281242632055431251032761901718813519_by_1",
+                          "typeString": "int_const 1317042832661281242632055431251032761901718813519"
+                        }
+                      ],
+                      "id": 75,
+                      "name": "IScoreStore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 66,
+                      "src": "264:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_IScoreStore_$66_$",
+                        "typeString": "type(contract IScoreStore)"
+                      }
+                    },
+                    "id": 77,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "264:55:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IScoreStore_$66",
+                      "typeString": "contract IScoreStore"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "239:80:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 81,
+                        "name": "name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 68,
+                        "src": "356:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 79,
+                        "name": "scoreStore",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 74,
+                        "src": "336:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_IScoreStore_$66",
+                          "typeString": "contract IScoreStore"
+                        }
+                      },
+                      "id": 80,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "GetScore",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 65,
+                      "src": "336:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_int256_$",
+                        "typeString": "function (string memory) external returns (int256)"
+                      }
+                    },
+                    "id": 82,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "336:25:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "functionReturnParameters": 72,
+                  "id": 83,
+                  "nodeType": "Return",
+                  "src": "329:32:1"
+                }
+              ]
+            },
+            "id": 85,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "ShowScore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 69,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 68,
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 85,
+                  "src": "140:11:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string memory"
+                  },
+                  "typeName": {
+                    "id": 67,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "140:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "139:13:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 72,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 71,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 85,
+                  "src": "162:3:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int256",
+                    "typeString": "int256"
+                  },
+                  "typeName": {
+                    "id": 70,
+                    "name": "int",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:3:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_int256",
+                      "typeString": "int256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "161:5:1"
+            },
+            "scope": 86,
+            "src": "121:247:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 87,
+        "src": "100:270:1"
+      }
+    ],
+    "src": "0:370:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {
+    "1520213021246": {
+      "events": {},
+      "links": {},
+      "address": "0xdd0e9004a16c77b3999e1e9be78c007c08a44a00",
+      "transactionHash": "0xf4b32956849bef9c47c29e3ab15d937cdc22d8c94dbc734b75557d7c3b0104d5"
+    }
+  },
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-05T06:37:42.929Z"
+}
