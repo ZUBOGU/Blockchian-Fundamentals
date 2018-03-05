@@ -36,7 +36,7 @@ Better to user Windows.
 
 > npm install -g truffle
 
-## Note for HelloWorld sample contract
+## Note for HelloWorld simple contract
 Use truffle to initial and use Visual Studio Code to edit code. 
 
 Check truffle document
@@ -91,7 +91,7 @@ HelloWorld.deployed().then(function(deployed){hw=deployed;});
 hw.SayHello.call()
 ```
 
-## Note for ScoreStore project
+## Note for ScoreStore contract
 ```
 truffle console
 var ss
@@ -135,11 +135,33 @@ StoreStore.deployed()
 Check the contract from console mode.
 ```
 truffle console
-var ss
-ScoreStore.deployed().then(function(deployed){ss=deployed;});
-ss.AddPersonScore("zubo", 10);
-ss.GetScore.call("zubo")
+var mg
+MyGame.deployed().then(function(deployed){mg=deployed;});
+mg.ShowScore.call("zubo").then(function(returnValue){console.log(returnValue);});
 ```
+
+## Ethereum JavaScript API
+Interact with Ethereum. Available through Web3.js. Make RPC calls. Work together with Metamask.
+
+Truffle Webpack demo.
+
+```
+truffle unbox webpack
+truffle compile
+truffle migrate
+npm run dev
+```
+
+Go to browser.
+> http://localhost:8081/
+
+Set Metamask with correct RPC
+> http://localhost:8545/
+
+Copy the private key from testrpc. Use this key to import account for Metamask.
+Copy the address from another account and send 200 meta to that address. 
+Refresh the page after switch account with Metamask will show the balance of META.
+
 
 ## Advanced Types
 
