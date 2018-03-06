@@ -174,6 +174,12 @@ We need to use solc compiler
 npm install -g solc
 ```
 
+```
+web3.eth.compile.solidity(source_code)
+```
+
+This method in Web3 is deprecated. In order to read contract, we need to manually provide "ABI" and "CODE". This can get from "/build" folder, JSON file for the contract after ```truffle compile```. Check file ```app.js```
+
 ## Advanced Types
 
 Structs: Custom defined types.
