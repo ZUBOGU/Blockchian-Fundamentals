@@ -162,6 +162,17 @@ Copy the private key from testrpc. Use this key to import account for Metamask.
 Copy the address from another account and send 200 meta to that address. 
 Refresh the page after switch account with Metamask will show the balance of META.
 
+## FoodSafe Project
+The different scenarios. Create a new contract for every new food. Ability to write and read information with right pass-phase.
+
+Add create new contract logic to app.js.
+
+In order to compile and send our contract directly to the blockchain via JavaScript rather than to user truffle.
+We need to use solc compiler
+
+```
+npm install -g solc
+```
 
 ## Advanced Types
 
