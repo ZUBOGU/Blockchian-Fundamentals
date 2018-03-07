@@ -5,8 +5,6 @@ Create a fully functional sample distributed application that ensures a secure a
 Better to user Windows. 
 > Chrome
 
-> Metamask
-
 > Visual Studio Code (Editor)
 
 > npm
@@ -17,7 +15,9 @@ Better to user Windows.
 
 > Windows Build Tools
 
-> Test RPC (Server)
+> Test RPC (Server) // or Use Ganache which has UI. Can run together with different local-host port.
+
+> Metamask (Used in browser for accounts)
 
 > Truffle (Development Framework)
 
