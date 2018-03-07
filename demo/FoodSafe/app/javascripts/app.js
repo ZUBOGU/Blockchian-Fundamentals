@@ -1,6 +1,7 @@
 import "../stylesheets/app.css";
 import { default as Web3} from 'web3';
-import { default as contract } from 'truffle-contract'
+import { default as contract } from 'truffle-contract';
+import { default as Crypto} from 'crypto-js';
 var accounts;
 var account;
 var foodSafeABI = JSON.parse('[ { "constant": false, "inputs": [ { "name": "LocationId", "type": "uint256" }, { "name": "Name", "type": "string" }, { "name": "Secret", "type": "string" } ], "name": "AddNewLocation", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [], "name": "GetTrailCount", "outputs": [ { "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "TrailNo", "type": "uint8" } ], "name": "GetLocation", "outputs": [ { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" } ]');
@@ -25,7 +26,8 @@ window.App = {
       foodSafeContract = web3.eth.contract(foodSafeABI);
     });
   },
-    createContract: function()
+  
+  createContract: function()
   {
     foodSafeContract.new("", {from:account, data: foodSafeCode, gas: 3000000}, function (error, deployedContract){
       if(deployedContract.address)
@@ -33,6 +35,41 @@ window.App = {
         document.getElementById("contractAddress").value=deployedContract.address;
       }
     })
+  },
+
+  addNewLocation: function() {
+    var contractAddress = document.getElementById("contractAddress").value;
+    var deployedFoodSafe = foodSafeContract.at(contractAddress);
+
+    var locationId = document.getElementById("locationId").value;
+    var locationName = document.getElementById("locationName").value;
+    var secret = document.getElementById("secret").value;
+    var passPhrase = document.getElementById("passPhrase").value;
+    console.log(locationId);
+    console.log(locationName);
+    console.log(secret);
+    console.log(passPhrase);
+
+    var encryptedSecret = Crypto.AES.encrypt(secret, passPhrase).toString();
+    console.log(encryptedSecret);
+    deployedFoodSafe.AddNewLocation(locationId, locationName, encryptedSecret, function(err) {
+      console.log(err);
+    })
+  },
+
+  getCurrentLocation: function() {
+    var contractAddress = document.getElementById("contractAddress").value;
+    var deployedFoodSafe = foodSafeContract.at(contractAddress);
+    var passPhrase = document.getElementById("passPhrase").value;
+    deployedFoodSafe.GetTrailCount.call(function (error, trailCount){
+      deployedFoodSafe.GetLocation.call(trailCount-1, function(error, returnValues){
+        document.getElementById("locationId").value= returnValues[1];
+        document.getElementById("locationName").value = returnValues[0];
+        var encryptedSecret = returnValues[4];
+        var decryptedSecret = Crypto.AES.decrypt(encryptedSecret, passPhrase).toString(Crypto.enc.Utf8);
+        document.getElementById("secret").value=decryptedSecret;
+      })
+    })    
   }
 };
 
